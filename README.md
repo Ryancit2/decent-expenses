@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# decentExpenses
+A decentralized expense tracker React WebApp on Ethereum Blockchain with custom smart contracts and integration with MetaMask wallet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Smart contract
+A simple smart contract is deployed on Ethereum's testnet with address `0xA9c4a7435e7866976aDc0fA209d159A9bD3969dF` which has following functions:
+- addExpense(string memory message, uint256 amount, bool isEarning): adds an expense entry against the message sender
+- getMyExpenses(): returns an array containing all the recorded expenses of the message sender
+- getUserBalance(): returns an integer containing current balance of the message sender
 
-## Available Scripts
+## Integration with MetaMask
+This WebApp is fully supprted by MetaMask wallet with signing of each transaction while sending to the network. Note that the contract is deployed on `Rinkeby testnet` and the user would therefore need some ethers in their account through faucet in order to perform transactions.
 
-In the project directory, you can run:
+## Application layout
+The application has a pretty straightfoward and simplest-possible interface for communication. To minimize hassle of login and signup, the application integrates with MetaMask and never asks for access again until the user revokes access from their wallet. The main interface has two main components:
+- A simple webform to add expenses to their record by sending a signed transaction by their local MetaMask wallet
+- A chronolgically sorted list of all their expense history with corresponding message and amount spent/earned
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Redistribution rights
+This basic application is made for educational use and is not intended to be deployed on the mainnet. Doing so might cause unforeseen errors which the developer does not take responsibility of. As far as the learning goes, anyone is free to reuse this as a guide to making a complete dApp with wallet integration.
